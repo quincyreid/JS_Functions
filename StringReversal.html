@@ -3,7 +3,24 @@
   <head>
     <script type="text/javascript" src="javascript/jquery-1.9.0.min.js"></script>
     <script type="text/javascript" src="javascript/reverse.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('#reversal').click(function(){
+          console.log('dlke');
+          var input = $('#input').val();
+          var output = reverse(input);
+          $('#output').val(output);
+          return false;
+        })
+      });
+    </script>
   </head>
   <body>
+    <h1>String Reversal</h1>
+    <form>
+       <label for="input">Input:</label> <input id="input" type="text" name="input"><br>
+       <label for="output">Output:</label> <input id="output" type="text" name="output"><br>
+       <input id="reversal" type="submit" value="reversal">
+     </form>
   </body>
 </html>
