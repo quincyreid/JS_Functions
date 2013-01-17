@@ -1,22 +1,26 @@
 <! doctype html>
-<head>
-<script>
-var factorial = function(num) {
-  for (var i = num-1 ; i >= 1; i--) {
-  num = num * i;
-}	
-return num;
-};
-var res = factorial(5);
-console.log(res);
-</script>
-</head>
-<body>
-  <h1>JavaScript Factorial</h1>
-  <form>
-     <label for="input">Input:</label> <input type="text" name="input"><br>
-     <label for="output">Output:</label> <input type="text" name="output"><br>
-     <input type="submit" value="calculate">
-   </form>
-</body>
+<html>
+  <head>
+    <script type="text/javascript" src="javascript/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="javascript/factorial.js"></script>
+    <script>
+       $(document).ready(function(){
+         $('#calculate').click(function(){
+           var input = $('#input').val();
+           var output = factorial(input);
+           $('#output').val(output); 
+           return false;
+         });
+       });
+         
+    </script>
+  </head>
+  <body>
+    <h1>JavaScript Factorial</h1>
+    <form>
+       <label for="input">Input:</label> <input id="input" type="text" name="input"><br>
+       <label for="output">Output:</label> <input id="output" type="text" name="output"><br>
+       <input id="calculate" type="submit" value="calculate">
+     </form>
+  </body>
 </html>
